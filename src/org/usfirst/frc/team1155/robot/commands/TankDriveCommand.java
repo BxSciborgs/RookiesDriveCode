@@ -19,7 +19,7 @@ public class TankDriveCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		setSpeed(Robot.oi.left.getY(),Robot.oi.right.getY());
+		Robot.tankDriveSubsystem.setSpeed(Robot.oi.left.getY(),Robot.oi.right.getY());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -37,6 +37,6 @@ public class TankDriveCommand extends Command {
 	// subsystems is scheduled to run
 	@Override
 	protected void interrupted() {
-		setSpeed(0,0);
+		Robot.tankDriveSubsystem.setSpeed(0,0);
 	}
 }
