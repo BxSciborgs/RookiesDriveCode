@@ -1,8 +1,6 @@
-
 package org.usfirst.frc.team1155.robot;
 
 import org.usfirst.frc.team1155.robot.commands.ExampleCommand;
-import org.usfirst.frc.team1155.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team1155.robot.subsystems.TankDriveSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;

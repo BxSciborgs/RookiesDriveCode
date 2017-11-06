@@ -1,15 +1,15 @@
 package org.usfirst.frc.team1155.robot.commands;
-import org.usfirst.frc.team1155.robot.Robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class TankDriveCommand extends Command {
 
-
+	public Joystick left = new Joystick(0);
+	public Joystick right = new Joystick(1);
 	
 	public TankDriveCommand() {
-		requires(Robot.tankDriveSubsystem); // using tank drive subsystem
+		requires(TankDriveSubsystem); // using tank drive subsystem
 	}
 	
 	@Override
@@ -19,7 +19,7 @@ public class TankDriveCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		setSpeed(Robot.oi.left.getY(),Robot.oi.right.getY());
+		setSpeed(left.getY(),right.getY());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
