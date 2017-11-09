@@ -7,11 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class TankDriveCommand extends Command {
 
-	
 	public TankDriveCommand() {
 		requires(Robot.tankDriveSubsystem); // using tank drive subsystem
 	}
-	
+
 	@Override
 	protected void initialize() {
 	}
@@ -19,7 +18,7 @@ public class TankDriveCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.tankDriveSubsystem.setSpeed(Robot.oi.left.getY(),Robot.oi.right.getY());
+		Robot.tankDriveSubsystem.setSpeed(Robot.oi.left.getY(), Robot.oi.right.getY());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -37,6 +36,6 @@ public class TankDriveCommand extends Command {
 	// subsystems is scheduled to run
 	@Override
 	protected void interrupted() {
-		Robot.tankDriveSubsystem.setSpeed(0,0);
+		Robot.tankDriveSubsystem.setSpeed(0, 0);
 	}
 }
