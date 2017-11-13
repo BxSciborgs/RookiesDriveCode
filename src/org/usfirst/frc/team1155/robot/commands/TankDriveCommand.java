@@ -3,12 +3,15 @@ package org.usfirst.frc.team1155.robot.commands;
 import org.usfirst.frc.team1155.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class TankDriveCommand extends Command {
 
 	public TankDriveCommand() {
 		requires(Robot.tankDriveSubsystem); // using tank drive subsystem
 	}
+	
+	public static SmartDashboard sd = new SmartDashboard();
 
 	@Override
 	protected void initialize() {
@@ -17,6 +20,7 @@ public class TankDriveCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
+		sd.putString("Left value: ", "" + Robot.oi.left.getY());
 		Robot.tankDriveSubsystem.setSpeed(Robot.oi.left.getY(), Robot.oi.right.getY());
 	}
 
