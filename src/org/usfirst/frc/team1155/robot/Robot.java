@@ -6,6 +6,7 @@ import org.usfirst.frc.team1155.robot.subsystems.TankDriveSubsystem;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,6 +20,8 @@ public class Robot extends IterativeRobot {
 	public static TankDriveSubsystem tankDriveSubsystem;
 	public static OI oi;
 
+	public static SmartDashboard sd = new SmartDashboard();
+	
 	/**
 	 * This function is run when the robot is first started up and should be used
 	 * for any initialization code.
