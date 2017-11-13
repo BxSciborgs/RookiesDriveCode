@@ -7,22 +7,27 @@ import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class TankDriveSubsystem extends Subsystem {
-	CANTalon leftCantalon;
-	CANTalon rightCantalon;
+	CANTalon frontLeft, frontRight, backLeft, backRight;
 
 	public TankDriveSubsystem() {
-		leftCantalon = new CANTalon(RobotMap.leftMotor);
-		rightCantalon = new CANTalon(RobotMap.rightMotor);
+		frontLeft = new CANTalon(PortMap.DRIVE_FRONT_LEFT_TALON);
+		frontRight = new CANTalon(PortMap.DRIVE_FRONT_RIGHT_TALON);
+		backLeft = new CANTalon(PortMap.DRIVE_BACK_LEFT_TALON);
+		backRight = new CANTalon(PortMap.DRIVE_BACK_RIGHT_TALON);
 	}
 
 	@Override
 	protected void initDefaultCommand() {
-		leftCantalon.set(0);
-		rightCantalon.set(0);
+		frontRight.set(0);
+		frontLeft.set(0);
+		backRight.set(0);
+		backLeft.set(0);
 	}
 
 	public void setSpeed(double leftSpeed, double rightSpeed) {
-		leftCantalon.set(leftSpeed);
-		rightCantalon.set(rightSpeed);
+		frontRight.set(rightSpeed);
+		frontLeft.set(leftSpeed);
+		backRight.set(rightSpeed);
+		backLeft.set(leftSpeed);
 	}
 }
