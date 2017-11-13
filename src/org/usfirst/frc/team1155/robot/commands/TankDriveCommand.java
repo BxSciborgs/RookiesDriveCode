@@ -11,7 +11,7 @@ public class TankDriveCommand extends Command {
 		requires(Robot.tankDriveSubsystem); // using tank drive subsystem
 	}
 	
-	public static SmartDashboard sd = new SmartDashboard();
+	public SmartDashboard sd = new SmartDashboard();
 
 	@Override
 	protected void initialize() {
