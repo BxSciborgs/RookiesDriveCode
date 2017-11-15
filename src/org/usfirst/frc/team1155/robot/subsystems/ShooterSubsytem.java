@@ -1,7 +1,6 @@
 
 package org.usfirst.frc.team1155.robot.subsystems;
 
-import org.usfirst.frc.team1155.robot.OI;
 import org.usfirst.frc.team1155.robot.PortMap;
 
 import edu.wpi.first.wpilibj.Servo;
@@ -18,6 +17,15 @@ public class ShooterSubsytem extends Subsystem {
 		speed = newSpeed;
 	}
 
+	public ShooterSubsytem() {
+		leftAngle.set(-0.53);
+		rightAngle.set(0.53);
+		speed = 300;
+		leftAngle = new Servo(PortMap.LEFT_SHOOT_SERVO);
+		rightAngle = new Servo(PortMap.RIGHT_SHOOT_SERVO);
+		leftPower = new Servo(PortMap.LEFT_AGITATOR_SERVO);
+		rightPower = new Servo(PortMap.RIGHT_AGITATOR_SERVO);
+	}
 	
 	public void shoot(int s) {
 	// s = 1 or 0. So you can set the speed to some speed times the s
@@ -25,8 +33,8 @@ public class ShooterSubsytem extends Subsystem {
 			rightPower.set(1000);
 			leftPower.set(1000);}
 		else {
-			rightPower.set(s);
-			leftPower.set(2000 - s);}
+			rightPower.set(speed);
+			leftPower.set(2000 - speed);}
 	}
 	
 	public void setAngle(int angle) {
@@ -35,13 +43,6 @@ public class ShooterSubsytem extends Subsystem {
 		rightAngle.set(angle);}
 	
 	protected void initDefaultCommand() {
-		leftAngle.set(-0.53);
-		rightAngle.set(0.53);
-		speed = 300;
-		leftAngle = new Servo(PortMap.LEFT_SHOOT_SERVO);
-		rightAngle = new Servo(PortMap.RIGHT_SHOOT_SERVO);
-		leftPower = new Servo(PortMap.LEFT_AGITATOR_SERVO);
-		rightPower = new Servo(PortMap.RIGHT_AGITATOR_SERVO);
 	}
 	
 }
