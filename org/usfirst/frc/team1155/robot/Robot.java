@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1155.robot;
 
 import org.usfirst.frc.team1155.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team1155.robot.subsystems.GearDropperSubsystem;
 import org.usfirst.frc.team1155.robot.subsystems.TankDriveSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -18,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static TankDriveSubsystem tankDriveSubsystem;
+	public static GearDropperSubsystem gearDropperSubsystem;
 	public static OI oi;
 
 	public static SmartDashboard sd = new SmartDashboard();
@@ -29,6 +31,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		gearDropperSubsystem = new GearDropperSubsystem();
 		tankDriveSubsystem = new TankDriveSubsystem();
 	}
 
