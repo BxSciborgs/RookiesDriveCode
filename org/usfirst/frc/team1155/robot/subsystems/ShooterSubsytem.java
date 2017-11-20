@@ -2,6 +2,8 @@ package org.usfirst.frc.team1155.robot.subsystems;
 
 import org.usfirst.frc.team1155.robot.PortMap;
 
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
