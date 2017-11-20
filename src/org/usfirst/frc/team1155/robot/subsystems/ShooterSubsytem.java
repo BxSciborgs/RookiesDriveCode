@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team1155.robot.subsystems;
 
 import org.usfirst.frc.team1155.robot.PortMap;
@@ -11,36 +10,27 @@ public class ShooterSubsytem extends Subsystem {
 	// FIELDS: speed, all of the servos
 	// METHODS: shoot, setAngle, setSpeed
 	private int speed;
-	private Servo leftAngle, rightAngle, leftPower, rightPower;
+	private CANTalon rightShoot, leftShoot;
 	
 	public void setSpeed(int newSpeed) {
 		speed = newSpeed;
 	}
 
 	public ShooterSubsytem() {
-		leftAngle.set(-0.53);
-		rightAngle.set(0.53);
 		speed = 300;
-		leftAngle = new Servo(PortMap.LEFT_SHOOT_SERVO);
-		rightAngle = new Servo(PortMap.RIGHT_SHOOT_SERVO);
-		leftPower = new Servo(PortMap.LEFT_AGITATOR_SERVO);
-		rightPower = new Servo(PortMap.RIGHT_AGITATOR_SERVO);
+		leftShoot = new CANTalon(PortMap.LEFT_SHOOT_TALON);
+		rightShoot = new CANTalon(PortMap.RIGHT_SHOOT_TALON);
 	}
 	
 	public void shoot(int s) {
 	// s = 1 or 0. So you can set the speed to some speed times the s
 		if (s == 0) {
-			rightPower.set(1000);
-			leftPower.set(1000);}
+			rightShoot.set(0);
+			leftShoot.set(0);}
 		else {
-			rightPower.set(speed);
-			leftPower.set(2000 - speed);}
+			rightShoot.set(speed);
+			leftShoot.set(0 - speed);}
 	}
-	
-	public void setAngle(int angle) {
-	// set the angle of both servos to the angle variable
-		leftAngle.set(0 - angle);
-		rightAngle.set(angle);}
 	
 	protected void initDefaultCommand() {
 	}
