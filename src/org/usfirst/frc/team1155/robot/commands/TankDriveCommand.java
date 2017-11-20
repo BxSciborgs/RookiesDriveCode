@@ -10,7 +10,7 @@ public class TankDriveCommand extends Command {
 	public TankDriveCommand() {
 		requires(Robot.tankDriveSubsystem); // using tank drive subsystem
 	}
-	
+
 	public SmartDashboard sd = new SmartDashboard();
 
 	@Override

@@ -16,9 +16,7 @@ public class PortMap {
 	
 	public static final int[] DRIVE_RIGHT_PISTONS = {2, 5};
 	public static final int[] DRIVE_LEFT_PISTONS = {0, 7};
-	
-	public static final int[] ULTRASONIC = {1,0};
-		
+			
 	//****************GEAR*******************//
 	
 	public static final int[] GEAR_PISTONS = {4,6};
@@ -28,11 +26,6 @@ public class PortMap {
 	public static final int RIGHT_SHOOT_TALON = 1;
 	public static final int LEFT_SHOOT_TALON = 0;
 	
-	public static final int LEFT_SHOOT_SERVO = 2; //2
-	public static final int RIGHT_SHOOT_SERVO = 1; //1
-	
-	public static final int LEFT_AGITATOR_SERVO = 3; //3
-	public static final int RIGHT_AGITATOR_SERVO = 0; //0
 	
 	//****************CLIMBER*******************//
 
